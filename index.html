@@ -92,11 +92,14 @@ header {
 }
 
 /* Spinning Logo */
-.logo {
-    height: 65px;
-    opacity: 0.95;
-    animation: slowSpin 18s linear infinite;
-    transform-origin: center;
+.logo{
+  height: 52px;        /* smaller */
+  width: auto;
+  max-width: 38vw;     /* never wider than 38% of screen */
+  opacity: 0.95;
+  animation: slowSpin 28s linear infinite;
+  transform-origin: center;
+  display: block;
 }
 
 @keyframes slowSpin {
