@@ -19,95 +19,125 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background-color: #0a0a0a;
-    color: #eaeaea;
+    background-color: #0c0c0e;
+    color: #f2f1ee;
 }
+
+/* HERO */
 
 header {
     height: 100vh;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.95)),
-    url('hero.jpg') center/cover no-repeat;
+    background:
+        radial-gradient(1000px 600px at 20% 30%, rgba(110,15,23,0.15), rgba(0,0,0,0) 60%),
+        linear-gradient(to bottom, rgba(12,12,14,0.78), rgba(12,12,14,0.95)),
+        url('hero.jpg') center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
+    padding: 0 8%;
+    position: relative;
+}
+
+/* NAV */
+
+.nav {
+    position: absolute;
+    top: 30px;
+    left: 8%;
+}
+
+.logo {
+    height: 55px;
+    opacity: 0.95;
+}
+
+/* HERO TEXT */
+
+.hero-content {
+    max-width: 700px;
 }
 
 h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 3.8rem;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
-
-h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    margin-bottom: 25px;
-}
-
-p {
-    line-height: 1.7;
-    font-weight: 300;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    letter-spacing: 0.08em;
+    margin: 0 0 12px 0;
 }
 
 .location {
-    letter-spacing: 3px;
-    font-size: 0.9rem;
-    margin-bottom: 30px;
-    color: #c5a35d;
+    letter-spacing: 4px;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    opacity: 0.7;
 }
 
+.subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+}
+
+/* BUTTONS */
+
 .btn {
-    padding: 14px 32px;
-    border: 1px solid #c5a35d;
+    display: inline-block;
+    padding: 14px 30px;
+    border: 1px solid #6e0f17;
     text-decoration: none;
-    color: #c5a35d;
-    transition: 0.4s ease;
+    color: #f2f1ee;
     letter-spacing: 1px;
+    transition: 0.3s ease;
+    margin-right: 15px;
 }
 
 .btn:hover {
-    background: #c5a35d;
-    color: #000;
+    background: #6e0f17;
+    box-shadow: 0 0 20px rgba(110,15,23,0.6);
 }
 
+/* SECTIONS */
+
 section {
-    padding: 100px 12%;
+    padding: 120px 12%;
     max-width: 1200px;
     margin: auto;
 }
 
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    position: relative;
 }
 
-.portfolio-grid img {
-    width: 100%;
-    height: 420px;
-    object-fit: cover;
-    transition: transform 0.4s ease;
+section h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 1px;
+    background: #6e0f17;
+    margin-top: 15px;
 }
 
-.portfolio-grid img:hover {
-    transform: scale(1.03);
+p {
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 25px;
 }
+
+/* FOOTER */
 
 footer {
     text-align: center;
-    padding: 60px 20px;
-    background: #0f0f0f;
+    padding: 80px 20px;
+    background: #0f0f12;
     font-size: 0.85rem;
     letter-spacing: 1px;
+    border-top: 1px solid #6e0f17;
 }
 
 a {
-    color: #c5a35d;
+    color: #6e0f17;
     text-decoration: none;
 }
 
@@ -117,10 +147,20 @@ a {
 <body>
 
 <header>
-    <h1>Glen Hartless</h1>
-    <div class="location">LONDON & TORONTO</div>
-    <h2>Illustrative Realism Tattoo Artist</h2>
-    <a href="#booking" class="btn">Email to Enquire</a>
+
+<div class="nav">
+    <img src="logo.png" class="logo" alt="Glen Hartless Logo">
+</div>
+
+<div class="hero-content">
+    <h1>GLEN HARTLESS</h1>
+    <div class="location">LONDON • TORONTO</div>
+    <div class="subtitle">Illustrative Realism Tattoo Artist</div>
+
+    <a href="#about" class="btn">View Work</a>
+    <a href="#booking" class="btn">Book Session</a>
+</div>
+
 </header>
 
 <section id="about">
@@ -144,44 +184,42 @@ maintain consistency and technical excellence across every project.
 </p>
 
 <p>
-Throughout his career, he has tattooed countless public figures and recording artists
-including Justin Bieber, Chris Brown, 21 Savage, Drake, Christie Mack, Angelina Jolie,
+Throughout his career, he has tattooed public figures and recording artists including
+Justin Bieber, Chris Brown, 21 Savage, Drake, Christie Mack, Angelina Jolie,
 and many others. He has tattooed live on MTV and MuchMusic, and once completed a tattoo
-mid-flight at 10,000 feet — a reflection of both technical control and composure under
-unconventional conditions.
+mid-flight at 10,000 feet.
 </p>
 
 <p>
 Glen is known for taking on technically demanding projects, particularly large-scale
-compositions and complex cover-ups. He approaches each piece with intensity, focus, and
-a commitment to producing work that exceeds expectation.
+compositions and complex cover-ups, approaching each piece with intensity and control.
 </p>
 </section>
 
 <section id="booking">
-    <h2>Enquiries</h2>
+<h2>Enquiries</h2>
 
-    <p>
-        For consultations and project inquiries, please email directly with a detailed description of your concept,
-        placement, approximate size, and any reference material.
-    </p>
+<p>
+For consultations and project inquiries, please email directly with a detailed description of your concept,
+placement, approximate size, and reference material.
+</p>
 
-    <a href="mailto:glen@glenhartless.com" class="btn">glen@glenhartless.com</a>
+<a href="mailto:glen@glenhartless.com" class="btn">glen@glenhartless.com</a>
 
-    <p style="margin-top:50px;">
-        Follow on Instagram
-    </p>
+<p style="margin-top:50px;">
+Follow on Instagram
+</p>
 
-    <a href="https://instagram.com/glenhartless" target="_blank">
-        @glenhartless
-    </a>
+<a href="https://instagram.com/glenhartless" target="_blank">
+@glenhartless
+</a>
 
 </section>
 
 <footer>
-    London & Toronto, Ontario 
-    <br><br>
-    © 2026 Glen Hartless 
+London & Toronto, Ontario
+<br><br>
+© 2026 Glen Hartless
 </footer>
 
 </body>
