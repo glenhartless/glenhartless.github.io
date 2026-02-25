@@ -44,61 +44,63 @@ header {
     overflow: hidden;
 }
 
-/* NAV */
+/* HERO CONTENT */
 
-.nav {
-    position: absolute;
-    top: 34px;
-    left: 8%;
-    background: transparent;
-    padding: 0;
+.hero-content {
+    max-width: 860px;
+    padding-top: 10px;
 }
 
-/* BIGGER + SHARPER LOGO */
+/* LOGO (now integrated, not isolated) */
 
 .logo {
-    height: 190px;  /* Increased size */
+    height: 150px;
     width: auto;
     opacity: 0.98;
     background: transparent;
     display: block;
+    margin-bottom: 28px;
     image-rendering: -webkit-optimize-contrast;
+}
+
+/* Optional: subtle divider vibe under logo */
+.brand-divider {
+    width: 90px;
+    height: 1px;
+    background: rgba(242,241,238,0.25);
+    margin: -10px 0 30px 0;
 }
 
 /* HERO TEXT */
 
-.hero-content {
-    max-width: 760px;
-    padding-top: 60px;
-}
-
 h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(4.8rem, 6.8vw, 6.8rem);
-    letter-spacing: 0.10em;
-    margin: 0 0 14px 0;
-    line-height: 1.02;
+    font-size: clamp(5.6rem, 7.3vw, 7.8rem); /* bigger */
+    letter-spacing: 0.12em;
+    margin: 0 0 16px 0;
+    line-height: 1.03;
 }
 
 .location {
-    letter-spacing: 5px;
-    font-size: 0.95rem;
-    margin-bottom: 22px;
-    opacity: 0.72;
+    letter-spacing: 6px; /* slightly wider */
+    font-size: 1.02rem;  /* bigger */
+    margin-bottom: 20px;
+    opacity: 0.75;
+    text-transform: uppercase;
 }
 
 .subtitle {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.9rem;
-    margin-bottom: 34px;
-    opacity: 0.95;
+    font-size: 2.15rem;  /* bigger */
+    margin-bottom: 36px;
+    opacity: 0.96;
 }
 
 /* BUTTONS */
 
 .btn {
     display: inline-block;
-    padding: 14px 32px;
+    padding: 14px 34px;
     border: 1px solid rgba(110,15,23,0.85);
     text-decoration: none;
     color: var(--text);
@@ -171,10 +173,17 @@ a {
         padding: 0 7%;
     }
     .logo{
-        height: 140px;
+        height: 120px;
+        margin-bottom: 22px;
+    }
+    .brand-divider{
+        margin-bottom: 22px;
     }
     h1{
-        letter-spacing: 0.08em;
+        letter-spacing: 0.09em;
+    }
+    .subtitle{
+        font-size: 1.7rem;
     }
     .btn{
         margin-bottom: 12px;
@@ -187,11 +196,10 @@ a {
 
 <header>
 
-<div class="nav">
-    <img src="logo.png" class="logo" alt="Glen Hartless Logo">
-</div>
-
 <div class="hero-content">
+    <img src="logo.png" class="logo" alt="Glen Hartless Logo">
+    <div class="brand-divider"></div>
+
     <h1>GLEN HARTLESS</h1>
     <div class="location">LONDON • TORONTO</div>
     <div class="subtitle">Illustrative Realism Tattoo Artist</div>
