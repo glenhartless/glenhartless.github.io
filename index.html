@@ -7,9 +7,7 @@
 <title>Glen Hartless | Tattoo Artist London & Toronto | Illustrative Realism</title>
 
 <meta name="description" content="Glen Hartless is an international illustrative realism tattoo artist working between London and Toronto. Specializing in black and grey portraits and large-scale custom tattoo work.">
-
 <meta name="keywords" content="Tattoo Artist London Ontario, Tattoo Artist Toronto, Black and Grey Tattoo London, Portrait Tattoo Artist Toronto, Realism Tattoo Ontario">
-
 <meta name="author" content="Glen Hartless">
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -23,7 +21,54 @@ body {
     color: #f2f1ee;
 }
 
-/* HERO */
+/* =========================
+   INTRO OVERLAY
+========================= */
+
+#intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#intro video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.02);
+}
+
+#intro.fade-out {
+    animation: introFade 1.2s ease forwards;
+}
+
+@keyframes introFade {
+    from { opacity: 1; }
+    to   { opacity: 0; visibility: hidden; }
+}
+
+#skipIntro {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(0,0,0,0.25);
+    color: #fff;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+}
+
+/* =========================
+   HERO
+========================= */
 
 header {
     height: 100vh;
@@ -46,9 +91,17 @@ header {
     left: 8%;
 }
 
+/* Spinning Logo */
 .logo {
-    height: 55px;
+    height: 65px;
     opacity: 0.95;
+    animation: slowSpin 18s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes slowSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
 }
 
 /* HERO TEXT */
@@ -77,8 +130,6 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* BUTTONS */
-
 .btn {
     display: inline-block;
     padding: 14px 30px;
@@ -94,8 +145,6 @@ h1 {
     background: #6e0f17;
     box-shadow: 0 0 20px rgba(110,15,23,0.6);
 }
-
-/* SECTIONS */
 
 section {
     padding: 120px 12%;
@@ -125,8 +174,6 @@ p {
     margin-bottom: 25px;
 }
 
-/* FOOTER */
-
 footer {
     text-align: center;
     padding: 80px 20px;
@@ -145,6 +192,14 @@ a {
 </head>
 
 <body>
+
+<!-- INTRO VIDEO -->
+<div id="intro">
+    <video id="introVideo" autoplay muted playsinline preload="auto">
+        <source src="intro.mp4" type="video/mp4">
+    </video>
+    <button id="skipIntro">SKIP</button>
+</div>
 
 <header>
 
@@ -165,55 +220,12 @@ a {
 
 <section id="about">
 <h2>About</h2>
-
-<p>
-Glen Hartless began tattooing in the winter of 2007 and has built an international career
-defined by discipline, adaptability, and technical precision. Specializing in illustrative
-realism and black & grey portraiture, his work is structured to hold integrity over time.
-</p>
-
-<p>
-Having lived and tattooed around the world — from Australia to the United Kingdom — Glen
-has worked at dozens of international conventions, refining a globally influenced and
-performance-driven approach to tattooing.
-</p>
-
-<p>
-A Pro Team Artist sponsored by EMALLA, Glen works with industry-leading equipment to
-maintain consistency and technical excellence across every project.
-</p>
-
-<p>
-Throughout his career, he has tattooed public figures and recording artists including
-Justin Bieber, Chris Brown, 21 Savage, Drake, Christie Mack, Angelina Jolie,
-and many others. He has tattooed live on MTV and MuchMusic, and once completed a tattoo
-mid-flight at 10,000 feet.
-</p>
-
-<p>
-Glen is known for taking on technically demanding projects, particularly large-scale
-compositions and complex cover-ups, approaching each piece with intensity and control.
-</p>
+<p>Glen Hartless began tattooing in the winter of 2007 and has built an international career defined by discipline, adaptability, and technical precision.</p>
 </section>
 
 <section id="booking">
 <h2>Enquiries</h2>
-
-<p>
-For consultations and project inquiries, please email directly with a detailed description of your concept,
-placement, approximate size, and reference material.
-</p>
-
 <a href="mailto:glen@glenhartless.com" class="btn">glen@glenhartless.com</a>
-
-<p style="margin-top:50px;">
-Follow on Instagram
-</p>
-
-<a href="https://instagram.com/glenhartless" target="_blank">
-@glenhartless
-</a>
-
 </section>
 
 <footer>
@@ -222,8 +234,36 @@ London & Toronto, Ontario
 © 2026 Glen Hartless
 </footer>
 
-</body>
-</html>
+<script>
+(function(){
+    const intro = document.getElementById('intro');
+    const video = document.getElementById('introVideo');
+    const skip = document.getElementById('skipIntro');
+
+    const fadeDuration = 1.2;
+    const fadeStartBeforeEnd = 1.2;
+
+    function fadeOut() {
+        if (!intro.classList.contains('fade-out')) {
+            intro.classList.add('fade-out');
+            setTimeout(() => intro.remove(), fadeDuration * 1000 + 100);
+        }
+    }
+
+    skip.addEventListener('click', fadeOut);
+
+    video.addEventListener('loadedmetadata', () => {
+        const timer = setInterval(() => {
+            if (!video.duration) return;
+            if ((video.duration - video.currentTime) <= fadeStartBeforeEnd) {
+                clearInterval(timer);
+                fadeOut();
+            }
+        }, 120);
+    });
+
+    video.addEventListener('error', fadeOut);
+})();
 </script>
 
 </body>
