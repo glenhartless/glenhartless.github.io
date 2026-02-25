@@ -14,246 +14,227 @@
 
 <style>
 :root{
-  --bg: #0c0c0e;
-  --text: #f2f1ee;
-  --accent: #6e0f17;
+  --bg:#0c0c0e;
+  --text:#f2f1ee;
+  --accent:#6e0f17;
 }
 
-*{ box-sizing: border-box; }
+*{ box-sizing:border-box; }
 
 body{
   margin:0;
-  font-family: 'Inter', sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
+  font-family:'Inter', sans-serif;
+  background-color:var(--bg);
+  color:var(--text);
 }
 
 /* =========================
-   INTRO OVERLAY (VIDEO SPLASH)
-   ========================= */
+   INTRO OVERLAY
+========================= */
 
 #intro{
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
 }
 
 #intro video{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.02); /* tiny scale hides edge artifacts */
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:scale(1.02);
 }
 
 #intro.fade-out{
-  animation: introFade 1.25s ease forwards;
+  animation:introFade 1.25s ease forwards;
 }
 
 @keyframes introFade{
-  from { opacity: 1; }
-  to   { opacity: 0; visibility: hidden; }
-}
-
-#intro-ui{
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+  from{ opacity:1; }
+  to{ opacity:0; visibility:hidden; }
 }
 
 #skipIntro{
-  position: absolute;
-  bottom: 22px;
-  right: 22px;
-  pointer-events: auto;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(242,241,238,0.25);
-  color: rgba(242,241,238,0.85);
-  background: rgba(0,0,0,0.25);
-  backdrop-filter: blur(6px);
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  cursor: pointer;
+  position:absolute;
+  bottom:22px;
+  right:22px;
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid rgba(242,241,238,0.25);
+  color:rgba(242,241,238,0.85);
+  background:rgba(0,0,0,0.25);
+  backdrop-filter:blur(6px);
+  font-size:0.85rem;
+  letter-spacing:0.08em;
+  cursor:pointer;
 }
 
 #skipIntro:hover{
-  border-color: rgba(242,241,238,0.5);
-  color: rgba(242,241,238,0.95);
+  border-color:rgba(242,241,238,0.5);
+  color:rgba(242,241,238,0.95);
 }
 
 /* =========================
-   HERO PAGE (YOUR LANDING)
-   ========================= */
+   HERO PAGE
+========================= */
 
 header{
-  height: 100vh;
+  height:100vh;
   background:
     radial-gradient(1000px 600px at 20% 30%, rgba(110,15,23,0.15), rgba(0,0,0,0) 60%),
     linear-gradient(to bottom, rgba(12,12,14,0.78), rgba(12,12,14,0.95)),
     url('hero.jpg') center/cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 8%;
-  position: relative;
-  overflow: hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:0 8%;
+  position:relative;
+  overflow:hidden;
 }
 
-/* Optional blur overlay to make background feel softer */
 header::after{
   content:"";
   position:absolute;
   inset:0;
-  background: rgba(0,0,0,0.15);
-  backdrop-filter: blur(3px);
+  background:rgba(0,0,0,0.15);
+  backdrop-filter:blur(3px);
   pointer-events:none;
 }
 
-/* NAV LOGO TOP LEFT */
 .nav{
-  position: absolute;
-  top: 34px;
-  left: 8%;
-  z-index: 2;
+  position:absolute;
+  top:34px;
+  left:8%;
+  z-index:2;
 }
 
 .logo{
-  height: 90px;
-  width: auto;
+  height:90px;
+  width:auto;
   display:block;
-  opacity: 0.98;
-  background: transparent;
-  image-rendering: -webkit-optimize-contrast;
+  opacity:0.98;
+  background:transparent;
+  image-rendering:-webkit-optimize-contrast;
 }
 
-/* HERO CONTENT */
 .hero-content{
-  position: relative;
-  z-index: 2;
-  max-width: 860px;
-  padding-top: 20px;
+  position:relative;
+  z-index:2;
+  max-width:860px;
+  padding-top:20px;
 }
 
 h1{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(5.3rem, 7vw, 7.4rem);
-  letter-spacing: 0.12em;
-  margin: 0 0 16px 0;
-  line-height: 1.03;
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(5.3rem, 7vw, 7.4rem);
+  letter-spacing:0.12em;
+  margin:0 0 16px 0;
+  line-height:1.03;
 }
 
 .location{
-  letter-spacing: 6px;
-  font-size: 1.02rem;
-  margin-bottom: 20px;
-  opacity: 0.75;
-  text-transform: uppercase;
+  letter-spacing:6px;
+  font-size:1.02rem;
+  margin-bottom:20px;
+  opacity:0.75;
+  text-transform:uppercase;
 }
 
 .subtitle{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.05rem;
-  margin-bottom: 36px;
-  opacity: 0.96;
+  font-family:'Cormorant Garamond', serif;
+  font-size:2.05rem;
+  margin-bottom:36px;
+  opacity:0.96;
 }
 
-/* BUTTONS */
 .btn{
-  display: inline-block;
-  padding: 14px 34px;
-  border: 1px solid rgba(110,15,23,0.85);
-  text-decoration: none;
-  color: var(--text);
-  letter-spacing: 1px;
-  transition: 0.25s ease;
-  margin-right: 14px;
-  border-radius: 999px;
-  background: rgba(0,0,0,0.12);
-  backdrop-filter: blur(2px);
+  display:inline-block;
+  padding:14px 34px;
+  border:1px solid rgba(110,15,23,0.85);
+  text-decoration:none;
+  color:var(--text);
+  letter-spacing:1px;
+  transition:0.25s ease;
+  margin-right:14px;
+  border-radius:999px;
+  background:rgba(0,0,0,0.12);
+  backdrop-filter:blur(2px);
 }
 
 .btn:hover{
-  background: rgba(110,15,23,0.92);
-  box-shadow: 0 0 24px rgba(110,15,23,0.45);
-  transform: translateY(-1px);
+  background:rgba(110,15,23,0.92);
+  box-shadow:0 0 24px rgba(110,15,23,0.45);
+  transform:translateY(-1px);
 }
 
-/* SECTIONS */
 section{
-  padding: 120px 12%;
-  max-width: 1200px;
-  margin: auto;
+  padding:120px 12%;
+  max-width:1200px;
+  margin:auto;
 }
 
 section h2{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.35rem;
-  margin-bottom: 40px;
-  position: relative;
+  font-family:'Cormorant Garamond', serif;
+  font-size:2.35rem;
+  margin-bottom:40px;
+  position:relative;
 }
 
 section h2::after{
-  content: "";
-  display: block;
-  width: 84px;
-  height: 1px;
-  background: var(--accent);
-  margin-top: 15px;
-  opacity: 0.9;
+  content:"";
+  display:block;
+  width:84px;
+  height:1px;
+  background:var(--accent);
+  margin-top:15px;
+  opacity:0.9;
 }
 
 p{
-  line-height: 1.9;
-  font-weight: 300;
-  margin-bottom: 26px;
-  opacity: 0.98;
+  line-height:1.9;
+  font-weight:300;
+  margin-bottom:26px;
+  opacity:0.98;
 }
 
-/* FOOTER */
 footer{
-  text-align: center;
-  padding: 80px 20px;
-  background: #0f0f12;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-  border-top: 1px solid rgba(110,15,23,0.85);
+  text-align:center;
+  padding:80px 20px;
+  background:#0f0f12;
+  font-size:0.85rem;
+  letter-spacing:1px;
+  border-top:1px solid rgba(110,15,23,0.85);
 }
 
 a{
-  color: var(--accent);
-  text-decoration: none;
+  color:var(--accent);
+  text-decoration:none;
 }
 
-/* MOBILE */
-@media (max-width: 640px){
-  header{ padding: 0 7%; }
-  .logo{ height: 70px; }
-  h1{ letter-spacing: 0.09em; }
-  .subtitle{ font-size: 1.7rem; }
-  .btn{ margin-bottom: 12px; }
+@media (max-width:640px){
+  header{ padding:0 7%; }
+  .logo{ height:70px; }
+  h1{ letter-spacing:0.09em; }
+  .subtitle{ font-size:1.7rem; }
+  .btn{ margin-bottom:12px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- INTRO VIDEO SPLASH -->
 <div id="intro">
   <video id="introVideo" autoplay muted playsinline preload="auto">
-    <!-- Upload your video file to GitHub as intro.mp4 -->
     <source src="intro.mp4" type="video/mp4">
   </video>
-  <div id="intro-ui">
-    <button id="skipIntro" aria-label="Skip intro">SKIP</button>
-  </div>
+  <button id="skipIntro">SKIP</button>
 </div>
 
-<!-- HERO PAGE -->
 <header>
   <div class="nav">
     <img src="logo.png" class="logo" alt="Glen Hartless Logo">
@@ -270,56 +251,19 @@ a{
 </header>
 
 <section id="about">
-  <h2>About</h2>
-
-  <p>
-    Glen Hartless began tattooing in the winter of 2007 and has built an international career
-    defined by discipline, adaptability, and technical precision. Specializing in illustrative
-    realism and black & grey portraiture, his work is structured to hold integrity over time.
-  </p>
-
-  <p>
-    Having lived and tattooed around the world — from Australia to the United Kingdom — Glen
-    has worked at dozens of international conventions, refining a globally influenced and
-    performance-driven approach to tattooing.
-  </p>
-
-  <p>
-    A Pro Team Artist sponsored by EMALLA, Glen works with industry-leading equipment to
-    maintain consistency and technical excellence across every project.
-  </p>
-
-  <p>
-    Throughout his career, he has tattooed public figures and recording artists including
-    Justin Bieber, Chris Brown, 21 Savage, Drake, Christie Mack, Angelina Jolie,
-    and many others. He has tattooed live on MTV and MuchMusic, and once completed a tattoo
-    mid-flight at 10,000 feet.
-  </p>
-
-  <p>
-    Glen is known for taking on technically demanding projects, particularly large-scale
-    compositions and complex cover-ups, approaching each piece with intensity and control.
-  </p>
+<h2>About</h2>
+<p>Glen Hartless began tattooing in the winter of 2007 and has built an international career defined by discipline, adaptability, and technical precision.</p>
 </section>
 
 <section id="booking">
-  <h2>Enquiries</h2>
-
-  <p>
-    For consultations and project inquiries, please email directly with a detailed description of your concept,
-    placement, approximate size, and reference material.
-  </p>
-
-  <a href="mailto:glen@glenhartless.com" class="btn">glen@glenhartless.com</a>
-
-  <p style="margin-top:50px;">Follow on Instagram</p>
-  <a href="https://instagram.com/glenhartless" target="_blank" rel="noopener noreferrer">@glenhartless</a>
+<h2>Enquiries</h2>
+<a href="mailto:glen@glenhartless.com" class="btn">glen@glenhartless.com</a>
 </section>
 
 <footer>
-  London & Toronto, Ontario
-  <br><br>
-  © 2026 Glen Hartless
+London & Toronto, Ontario
+<br><br>
+© 2026 Glen Hartless
 </footer>
 
 <script>
@@ -328,26 +272,17 @@ a{
   const v = document.getElementById('introVideo');
   const skip = document.getElementById('skipIntro');
 
-  // How long the fade-out animation lasts (must match CSS: 1.25s)
   const fadeDuration = 1.25;
-
-  // When to start fading relative to the end of the video (seconds)
-  // Adjust this if you want the fade earlier or later.
   const fadeStartBeforeEnd = 1.25;
 
   function fadeOutIntro(){
-    if (!intro || intro.classList.contains('fade-out')) return;
-    intro.classList.add('fade-out');
-    // Remove after fade so it stops capturing clicks/resources
-    setTimeout(() => { if (intro) intro.remove(); }, (fadeDuration * 1000) + 100);
+    if (!intro.classList.contains('fade-out')){
+      intro.classList.add('fade-out');
+      setTimeout(() => intro.remove(), (fadeDuration * 1000) + 100);
+    }
   }
 
   skip.addEventListener('click', fadeOutIntro);
-
-  // If autoplay is blocked, user taps video and it plays
-  intro.addEventListener('click', () => {
-    if (v && v.paused) v.play().catch(()=>{});
-  });
 
   v.addEventListener('loadedmetadata', () => {
     const check = setInterval(() => {
@@ -359,9 +294,7 @@ a{
     }, 120);
   });
 
-  // Safety: if video errors, remove intro immediately
   v.addEventListener('error', fadeOutIntro);
-
 })();
 </script>
 
