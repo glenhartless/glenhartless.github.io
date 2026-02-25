@@ -36,9 +36,14 @@ body {
     overflow: hidden;
 }
 .logo{
-    height: clamp(220px, 28vw, 420px);
-    width: auto;
+    position: absolute;
+    top: 80px;
+    left: 8%;
+    height: 380px !important;
+    width: auto !important;
+    max-width: none !important;
     opacity: 0.98;
+    z-index: 5;
 }
 #intro.fade-out {
     animation: introFade 1.2s ease forwards;
@@ -82,11 +87,7 @@ header {
 
 /* NAV */
 
-.nav {
-    position: absolute;
-    top: 70px;
-    left: 8%;
-}
+
 
 /* Spinning Logo */
 .logo{
