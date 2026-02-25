@@ -37,15 +37,12 @@ body {
 }
 
 .logo{
-  height: 52px;        /* smaller */
-  width: auto;
-  max-width: 38vw;     /* never wider than 38% of screen */
-  opacity: 0.95;
-  animation: slowSpin 28s linear infinite;
-  transform-origin: center;
-  display: block;
+    height: clamp(90px, 12vw, 160px);
+    width: auto;
+    max-width: 42vw;
+    opacity: 0.98;
+    display: block;
 }
-
 #intro.fade-out {
     animation: introFade 1.2s ease forwards;
 }
@@ -105,10 +102,7 @@ header {
   display: block;
 }
 
-@keyframes slowSpin {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-}
+
 
 /* HERO TEXT */
 
