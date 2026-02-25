@@ -15,12 +15,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+:root{
+    --bg: #0c0c0e;
+    --text: #f2f1ee;
+    --accent: #6e0f17;
+}
 
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background-color: #0c0c0e;
-    color: #f2f1ee;
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 /* HERO */
@@ -36,63 +41,79 @@ header {
     justify-content: center;
     padding: 0 8%;
     position: relative;
+    overflow: hidden;
 }
 
 /* NAV */
 
 .nav {
     position: absolute;
-    top: 30px;
+    top: 34px;
     left: 8%;
+    /* force any container behind logo to be transparent */
+    background: transparent;
+    padding: 0;
 }
 
+/* LOGO: Bigger + transparent-safe */
 .logo {
-    height: 55px;
-    opacity: 0.95;
+    height: 110px;              /* was 55px */
+    width: auto;
+    opacity: 0.98;
+    background: transparent;     /* just in case */
+    display: block;
+    image-rendering: auto;
 }
 
 /* HERO TEXT */
 
 .hero-content {
-    max-width: 700px;
+    max-width: 760px;
+    padding-top: 40px; /* gives breathing room under the logo */
 }
 
 h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 5vw, 4.5rem);
-    letter-spacing: 0.08em;
-    margin: 0 0 12px 0;
+    font-size: clamp(4.2rem, 6.2vw, 6.1rem); /* bigger */
+    letter-spacing: 0.10em;
+    margin: 0 0 14px 0;
+    line-height: 1.02;
 }
 
 .location {
-    letter-spacing: 4px;
-    font-size: 0.85rem;
-    margin-bottom: 20px;
-    opacity: 0.7;
+    letter-spacing: 5px;
+    font-size: 0.90rem;
+    margin-bottom: 22px;
+    opacity: 0.72;
 }
 
 .subtitle {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    margin-bottom: 30px;
+    font-size: 1.75rem;
+    margin-bottom: 34px;
+    opacity: 0.95;
 }
 
 /* BUTTONS */
 
 .btn {
     display: inline-block;
-    padding: 14px 30px;
-    border: 1px solid #6e0f17;
+    padding: 14px 32px;
+    border: 1px solid rgba(110,15,23,0.85);
     text-decoration: none;
-    color: #f2f1ee;
+    color: var(--text);
     letter-spacing: 1px;
-    transition: 0.3s ease;
-    margin-right: 15px;
+    transition: 0.25s ease;
+    margin-right: 14px;
+    border-radius: 999px; /* more premium, less boxy */
+    background: rgba(0,0,0,0.12);
+    backdrop-filter: blur(2px);
 }
 
 .btn:hover {
-    background: #6e0f17;
-    box-shadow: 0 0 20px rgba(110,15,23,0.6);
+    background: rgba(110,15,23,0.92);
+    box-shadow: 0 0 24px rgba(110,15,23,0.45);
+    transform: translateY(-1px);
 }
 
 /* SECTIONS */
@@ -105,7 +126,7 @@ section {
 
 section h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
+    font-size: 2.35rem;
     margin-bottom: 40px;
     position: relative;
 }
@@ -113,16 +134,18 @@ section h2 {
 section h2::after {
     content: "";
     display: block;
-    width: 80px;
+    width: 84px;
     height: 1px;
-    background: #6e0f17;
+    background: var(--accent);
     margin-top: 15px;
+    opacity: 0.9;
 }
 
 p {
-    line-height: 1.8;
+    line-height: 1.9;
     font-weight: 300;
-    margin-bottom: 25px;
+    margin-bottom: 26px;
+    opacity: 0.98;
 }
 
 /* FOOTER */
@@ -133,14 +156,30 @@ footer {
     background: #0f0f12;
     font-size: 0.85rem;
     letter-spacing: 1px;
-    border-top: 1px solid #6e0f17;
+    border-top: 1px solid rgba(110,15,23,0.85);
 }
 
 a {
-    color: #6e0f17;
+    color: var(--accent);
     text-decoration: none;
 }
 
+/* MOBILE TWEAKS */
+
+@media (max-width: 640px){
+    header{
+        padding: 0 7%;
+    }
+    .logo{
+        height: 88px;
+    }
+    h1{
+        letter-spacing: 0.08em;
+    }
+    .btn{
+        margin-bottom: 12px;
+    }
+}
 </style>
 </head>
 
@@ -210,7 +249,7 @@ placement, approximate size, and reference material.
 Follow on Instagram
 </p>
 
-<a href="https://instagram.com/glenhartless" target="_blank">
+<a href="https://instagram.com/glenhartless" target="_blank" rel="noopener noreferrer">
 @glenhartless
 </a>
 
