@@ -6,8 +6,8 @@
 
   <title>Glen Hartless | Tattoo Artist London & Toronto | Illustrative Realism</title>
 
-  <meta name="description" content="Glen Hartless is an international illustrative realism tattoo artist working between London and Toronto. Specializing in black and grey portraits and large-scale custom tattoo work." />
-  <meta name="keywords" content="Tattoo Artist London Ontario, Tattoo Artist Toronto, Black and Grey Tattoo London, Portrait Tattoo Artist Toronto, Realism Tattoo Ontario" />
+  <meta name="description" content="Glen Hartless is an international illustrative realism tattoo artist working between London and Toronto. Specializing in black and grey portraits, illustrative realism, cover-ups, and large-scale custom tattoo work." />
+  <meta name="keywords" content="Tattoo Artist London Ontario, Tattoo Artist Toronto, Black and Grey Tattoo London, Portrait Tattoo Artist Toronto, Realism Tattoo Ontario, Cover Up Tattoo London Ontario, Custom Tattoo Artist Ontario" />
   <meta name="author" content="Glen Hartless" />
 
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -16,10 +16,15 @@
     :root{
       --bg: #0c0c0e;
       --text: #f2f1ee;
+      --muted: rgba(242,241,238,0.72);
       --accent: #6e0f17;
     }
 
     * { box-sizing: border-box; }
+
+    html{
+      scroll-behavior: smooth;
+    }
 
     body{
       margin:0;
@@ -28,9 +33,6 @@
       color: var(--text);
     }
 
-    /* =========================
-       INTRO OVERLAY (VIDEO)
-    ========================= */
     #intro{
       position: fixed;
       inset: 0;
@@ -42,12 +44,12 @@
       overflow: hidden;
     }
 
- #intro video{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background: #000; /* prevents ugly empty areas */
-}
+    #intro video{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+    }
 
     #intro.fade-out{
       animation: introFade 1.2s ease forwards;
@@ -55,7 +57,7 @@
 
     @keyframes introFade{
       from { opacity: 1; }
-      to   { opacity: 0; visibility: hidden; }
+      to { opacity: 0; visibility: hidden; }
     }
 
     #skipIntro{
@@ -72,9 +74,6 @@
       cursor: pointer;
     }
 
-    /* =========================
-       HERO
-    ========================= */
     header{
       height: 100vh;
       background:
@@ -89,37 +88,35 @@
       overflow: hidden;
     }
 
-    /* NAV */
     .nav{
       position: absolute;
-      top: 15px;            /* move up a bit above the arm like you asked */
+      top: 15px;
       left: 8%;
       z-index: 5;
     }
 
     .logo{
-      height: 600px;        /* your “big” desktop logo */
+      height: 600px;
       width: auto;
       max-width: none;
       opacity: 0.98;
       display: block;
     }
 
-    /* HERO TEXT */
-.hero-content{
-  max-width: 900px;
-  position: relative;
-  z-index: 2;
-  margin-top: 18vh;   /* pushes text down */
-}
+    .hero-content{
+      max-width: 900px;
+      position: relative;
+      z-index: 2;
+      margin-top: 18vh;
+    }
 
- h1{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(7.5rem, 11vw, 13rem);
-  letter-spacing: 0.12em;
-  margin: 0 0 30px 0;
-  line-height: 0.95;
-}
+    h1{
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(7.5rem, 11vw, 13rem);
+      letter-spacing: 0.12em;
+      margin: 0 0 30px 0;
+      line-height: 0.95;
+    }
 
     .location{
       letter-spacing: 8px;
@@ -130,50 +127,124 @@
     }
 
     .subtitle{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem;
-  margin-bottom: 60px;
-  opacity: 1;
-}
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      margin-bottom: 60px;
+      opacity: 1;
+    }
 
-.btn{
-  display: inline-block;
-  padding: 20px 48px;
-  border: 2px solid var(--accent);
-  text-decoration: none;
-  color: var(--text);
-  letter-spacing: 2px;
-  font-size: 1.2rem;
-  font-weight: 500;
-  transition: 0.3s ease;
-  margin-right: 24px;
-}
+    .btn{
+      display: inline-block;
+      padding: 20px 48px;
+      border: 2px solid var(--accent);
+      text-decoration: none;
+      color: var(--text);
+      letter-spacing: 2px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      transition: 0.3s ease;
+      margin-right: 24px;
+      margin-bottom: 14px;
+    }
 
     .btn:hover{
       background: var(--accent);
       box-shadow: 0 0 20px rgba(110,15,23,0.6);
     }
 
-    /* SECTIONS */
     section{
-      padding: 140px 8%;
+      padding: 120px 8%;
       width: 100%;
       max-width: none;
+      border-top: 1px solid rgba(255,255,255,0.04);
     }
 
     section h2{
       font-family: 'Cormorant Garamond', serif;
       font-size: 3.2rem;
-      margin-bottom: 60px;
+      margin: 0 0 50px 0;
       position: relative;
     }
 
+    h3{
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.1rem;
+      margin: 55px 0 18px 0;
+      color: var(--text);
+    }
+
     p{
-      font-size: 1.35rem;
-      line-height: 2.1;
+      font-size: 1.25rem;
+      line-height: 2;
       font-weight: 300;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
       max-width: 1400px;
+    }
+
+    .intro-line{
+      font-size: 1.45rem;
+      color: var(--text);
+      max-width: 1200px;
+    }
+
+    .muted{
+      color: var(--muted);
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+      max-width: 1400px;
+    }
+
+    .card{
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.025);
+      padding: 30px;
+      min-height: 180px;
+    }
+
+    .card h3{
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    ol{
+      font-size: 1.2rem;
+      line-height: 2;
+      font-weight: 300;
+      padding-left: 24px;
+      max-width: 900px;
+    }
+
+    li{
+      margin-bottom: 12px;
+    }
+
+    .button-row{
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin: 30px 0 40px 0;
+    }
+
+    .button-row .btn{
+      margin-right: 0;
+    }
+
+    .faq{
+      max-width: 1000px;
+    }
+
+    .faq p{
+      margin-bottom: 28px;
+    }
+
+    a{
+      color: var(--accent);
+      text-decoration: none;
     }
 
     footer{
@@ -185,21 +256,12 @@
       border-top: 1px solid var(--accent);
     }
 
-    a{
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    /* =========================
-       MOBILE / TABLET
-    ========================= */
     @media (max-width: 900px){
       header{
         padding: 0 7%;
         background-position: center;
       }
 
-      /* Logo: big but controlled */
       .nav{
         left: 50%;
         transform: translateX(-50%);
@@ -240,6 +302,39 @@
         text-align: center;
         padding: 16px 22px;
         margin: 0 0 12px 0;
+        font-size: 1rem;
+      }
+
+      section{
+        padding: 90px 7%;
+      }
+
+      section h2{
+        font-size: 2.6rem;
+        margin-bottom: 34px;
+      }
+
+      h3{
+        font-size: 1.75rem;
+      }
+
+      p{
+        font-size: 1.05rem;
+        line-height: 1.85;
+        margin-bottom: 26px;
+        max-width: 100%;
+      }
+
+      .intro-line{
+        font-size: 1.15rem;
+      }
+
+      .grid{
+        grid-template-columns: 1fr;
+      }
+
+      ol{
+        font-size: 1.05rem;
       }
     }
 
@@ -253,7 +348,7 @@
       }
 
       h1{
-        font-size: 3.0rem;
+        font-size: 3rem;
         letter-spacing: 0.09em;
       }
 
@@ -262,18 +357,14 @@
       }
 
       section{
-        padding: 90px 7%;
+        padding: 80px 7%;
       }
 
-      p{
-        font-size: 1.05rem;
-        line-height: 1.85;
-        margin-bottom: 26px;
-        max-width: 100%;
+      .card{
+        padding: 24px;
       }
     }
 
-    /* MOBILE INTRO VIDEO FIX (show full frame) */
     @media (max-width: 640px){
       #intro video{
         object-fit: contain;
@@ -286,7 +377,6 @@
 
 <body>
 
-  <!-- INTRO VIDEO -->
   <div id="intro">
     <video id="introVideo" autoplay muted playsinline preload="auto">
       <source src="intro.mp4" type="video/mp4" />
@@ -304,19 +394,23 @@
       <div class="location">LONDON • TORONTO</div>
       <div class="subtitle">Illustrative Realism Tattoo Artist</div>
 
-      <!-- View Work now goes to a separate page -->
       <a href="work.html" class="btn">View Work</a>
-      <a href="#booking" class="btn">Book Session</a>
+      <a href="#booking" class="btn">Start a Booking</a>
     </div>
   </header>
 
   <section id="about">
     <h2>About</h2>
 
+    <p class="intro-line">
+      Tattooing since 2007. International artist working across Canada, the UK, and Australia.
+      Specializing in large-scale illustrative realism, black & grey portraiture, and complex cover-ups.
+    </p>
+
     <p>
       Glen Hartless began tattooing in the winter of 2007 and has built an international career
-      defined by discipline, adaptability, and technical precision. Specializing in illustrative
-      realism and black & grey portraiture, his work is structured to hold integrity over time.
+      defined by discipline, adaptability, and technical precision. His work is structured to hold
+      integrity over time, with a focus on contrast, composition, and long-term readability.
     </p>
 
     <p>
@@ -343,21 +437,111 @@
     </p>
   </section>
 
-  <section id="booking">
-    <h2>Enquiries</h2>
+  <section id="specialties">
+    <h2>Specialties</h2>
 
-    <p>
-      For consultations and project inquiries, please email directly with a detailed description of your concept,
-      placement, approximate size, and reference material.
+    <div class="grid">
+      <div class="card">
+        <h3>Illustrative Realism</h3>
+        <p>
+          Custom realism-based work with strong composition, contrast, and visual impact.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Black & Grey</h3>
+        <p>
+          Portraits, figures, animals, religious imagery, dark subject matter, and detailed shading.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Cover-Ups</h3>
+        <p>
+          Complex reworks and cover-ups designed around structure, flow, and realistic long-term results.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking">
+    <h2>Booking Process</h2>
+
+    <p class="intro-line">
+      Please choose the booking option that fits your project.
     </p>
 
-    <a href="mailto:glen@glenhartless.com" class="btn">
-  Email to Book Custom Work
-</a>
+    <div class="button-row">
+      <a href="mailto:glen@glenhartless.com" class="btn">
+        Email Custom Work
+      </a>
 
-<a href="https://venue.ink/@glenhartless" target="_blank" class="btn" style="margin-left:10px;">
-  View Flash / Book via Venue Ink
-</a>
+      <a href="https://venue.ink/@glenhartless" target="_blank" rel="noopener noreferrer" class="btn">
+        View Flash / Book via Venue Ink
+      </a>
+    </div>
+
+    <h3>How It Works</h3>
+
+    <ol>
+      <li>Send your idea with placement, approximate size, and reference images.</li>
+      <li>Your project is reviewed to make sure it fits the style, scale, and schedule.</li>
+      <li>A deposit is required to secure your appointment.</li>
+    </ol>
+
+    <h3>What I Take On</h3>
+
+    <p>
+      Large-scale custom tattoos, illustrative realism, black & grey work, portraits,
+      full sleeves, back pieces, chest pieces, and complex cover-ups.
+    </p>
+
+    <h3>What I Do Not Take On</h3>
+
+    <p>
+      Small walk-ins, copied Pinterest designs, rushed projects, or work that does not fit
+      the style and quality standard of the studio.
+    </p>
+
+    <h3>Pricing</h3>
+
+    <p>
+      Projects are priced based on size, placement, detail, and complexity.
+      Full-day sessions are preferred for larger work.
+    </p>
+  </section>
+
+  <section id="faq">
+    <h2>FAQ</h2>
+
+    <div class="faq">
+      <p>
+        <strong>Do you require a deposit?</strong><br>
+        Yes. All appointments require a non-refundable deposit to secure the booking.
+      </p>
+
+      <p>
+        <strong>How do I book custom work?</strong><br>
+        Email your idea, placement, approximate size, and reference material to
+        <a href="mailto:glen@glenhartless.com">glen@glenhartless.com</a>.
+      </p>
+
+      <p>
+        <strong>Where can I see available flash?</strong><br>
+        Available flash and booking options can be viewed through
+        <a href="https://venue.ink/@glenhartless" target="_blank" rel="noopener noreferrer">Venue Ink</a>.
+      </p>
+
+      <p>
+        <strong>Do you do cover-ups?</strong><br>
+        Yes, depending on the existing tattoo, placement, size, and what is realistically possible.
+      </p>
+
+      <p>
+        <strong>Where are you located?</strong><br>
+        Glen works between London and Toronto, Ontario.
+      </p>
+    </div>
 
     <p style="margin-top:50px;">Follow on Instagram</p>
     <a href="https://instagram.com/glenhartless" target="_blank" rel="noopener noreferrer">@glenhartless</a>
@@ -373,30 +557,38 @@
     (function(){
       const intro = document.getElementById('intro');
       const video = document.getElementById('introVideo');
-      const skip  = document.getElementById('skipIntro');
+      const skip = document.getElementById('skipIntro');
 
-      const fadeDuration = 1.2;          // seconds (matches CSS)
-      const fadeStartBeforeEnd = 1.2;    // seconds before video ends
+      const fadeDuration = 1.2;
+      const fadeStartBeforeEnd = 1.2;
 
       function fadeOut(){
         if (!intro || intro.classList.contains('fade-out')) return;
         intro.classList.add('fade-out');
-        setTimeout(() => { if (intro) intro.remove(); }, (fadeDuration * 1000) + 100);
+        setTimeout(() => {
+          if (intro) intro.remove();
+        }, (fadeDuration * 1000) + 100);
       }
 
-      skip.addEventListener('click', fadeOut);
+      if (skip) {
+        skip.addEventListener('click', fadeOut);
+      }
 
-      video.addEventListener('loadedmetadata', () => {
-        const timer = setInterval(() => {
-          if (!video.duration) return;
-          if ((video.duration - video.currentTime) <= fadeStartBeforeEnd) {
-            clearInterval(timer);
-            fadeOut();
-          }
-        }, 120);
-      });
+      if (video) {
+        video.addEventListener('loadedmetadata', () => {
+          const timer = setInterval(() => {
+            if (!video.duration) return;
 
-      video.addEventListener('error', fadeOut);
+            if ((video.duration - video.currentTime) <= fadeStartBeforeEnd) {
+              clearInterval(timer);
+              fadeOut();
+            }
+          }, 120);
+        });
+
+        video.addEventListener('error', fadeOut);
+        video.addEventListener('ended', fadeOut);
+      }
     })();
   </script>
 
